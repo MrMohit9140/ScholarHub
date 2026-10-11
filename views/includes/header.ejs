@@ -1,0 +1,46 @@
+<nav class="navbar">
+
+    <a href="/" class="logo">
+        <span>Scholar</span>Hub
+    </a>
+
+    <div class="nav-links">
+
+        <a href="/home">
+            Home
+        </a>
+
+        <a href="/home/community">
+            Community
+        </a>
+
+        <a href="#features">
+            Features
+        </a>
+
+        <!-- ================= AUTH BUTTONS ================= -->
+
+        <div class="auth-buttons">
+
+            <% if (user) { %>
+
+                <!-- Profile Icon - Logged In -->
+                <a href="/dashboard" class="profile-btn" title="My Dashboard">
+                    <span class="profile-icon">👤</span>
+                </a>
+
+            <% } else { %>
+
+                <!-- Login - Not Logged In -->
+                <a href="/home/login" class="login-btn">
+                    <span class="user-icon">👤</span>
+                    Login
+                </a>
+
+            <% } %>
+
+        </div>
+
+    </div>
+
+</nav>

@@ -1,0 +1,325 @@
+const mongoose = require("mongoose");
+
+const scholarshipSchema = new mongoose.Schema(
+    {
+        // ==========================================
+        // BASIC INFORMATION
+        // ==========================================
+
+        name: {
+            type: String,
+            required: true,
+            trim: true
+        },
+
+        slug: {
+            type: String,
+            unique: true,
+            trim: true,
+            lowercase: true
+        },
+
+        provider: {
+            type: String,
+            required: true,
+            trim: true
+        },
+
+        providerType: {
+            type: String,
+            enum: [
+                "Central Government",
+                "State Government",
+                "Private Organization",
+                "Corporate",
+                "NGO",
+                "University",
+                "International Organization"
+            ]
+        },
+
+        description: {
+            type: String,
+            required: true
+        },
+
+        // ==========================================
+        // SCHOLARSHIP TYPE
+        // ==========================================
+
+        type: {
+            type: String,
+            enum: [
+                "Merit",
+                "Need Based",
+                "Merit Cum Means",
+                "Government",
+                "Private",
+                "Research",
+                "Sports",
+                "Disability",
+                "Minority",
+                "Women",
+                "International",
+                "Other"
+            ]
+        },
+
+        // ==========================================
+        // EDUCATIONAL ELIGIBILITY
+        // ==========================================
+
+        educationLevels: [
+            {
+                type: String,
+                enum: [
+                    "School",
+                    "Class 11-12",
+                    "Diploma",
+                    "Undergraduate",
+                    "Postgraduate",
+                    "PhD"
+                ]
+            }
+        ],
+
+        courses: [
+            {
+                type: String
+            }
+        ],
+
+        fields: [
+            {
+                type: String
+            }
+        ],
+
+        institutionTypes: [
+            {
+                type: String,
+                enum: [
+                    "Government",
+                    "Private",
+                    "Government Aided",
+                    "Any"
+                ]
+            }
+        ],
+
+        // ==========================================
+        // LOCATION ELIGIBILITY
+        // ==========================================
+
+        states: [
+            {
+                type: String
+            }
+        ],
+
+        districts: [
+            {
+                type: String
+            }
+        ],
+
+        nationality: [
+            {
+                type: String
+            }
+        ],
+
+        // ==========================================
+        // FINANCIAL ELIGIBILITY
+        // ==========================================
+
+        maxIncome: {
+            type: Number
+        },
+
+        minIncome: {
+            type: Number,
+            default: 0
+        },
+
+        // ==========================================
+        // CATEGORY ELIGIBILITY
+        // ==========================================
+
+        categories: [
+            {
+                type: String,
+                enum: [
+                    "General",
+                    "EWS",
+                    "OBC",
+                    "SC",
+                    "ST",
+                    "Minority",
+                    "All"
+                ]
+            }
+        ],
+
+        // ==========================================
+        // ACADEMIC REQUIREMENTS
+        // ==========================================
+
+        minPercentage: {
+            type: Number,
+            min: 0,
+            max: 100
+        },
+
+        minCGPA: {
+            type: Number,
+            min: 0,
+            max: 10
+        },
+
+        // ==========================================
+        // SPECIAL ELIGIBILITY
+        // ==========================================
+
+        disabilityEligible: {
+            type: Boolean,
+            default: false
+        },
+
+        disabilityRequired: {
+            type: Boolean,
+            default: false
+        },
+
+        firstGenerationEligible: {
+            type: Boolean,
+            default: false
+        },
+
+        firstGenerationRequired: {
+            type: Boolean,
+            default: false
+        },
+
+        singleParentEligible: {
+            type: Boolean,
+            default: false
+        },
+
+        orphanEligible: {
+            type: Boolean,
+            default: false
+        },
+
+        defenceWardEligible: {
+            type: Boolean,
+            default: false
+        },
+
+        girlStudentEligible: {
+            type: Boolean,
+            default: false
+        },
+
+        ruralStudentEligible: {
+            type: Boolean,
+            default: false
+        },
+
+        // ==========================================
+        // SCHOLARSHIP BENEFIT
+        // ==========================================
+
+        benefit: {
+
+            amount: {
+                type: Number
+            },
+
+            amountType: {
+                type: String,
+                enum: [
+                    "Fixed",
+                    "Monthly",
+                    "Annual",
+                    "Tuition Fee",
+                    "Variable"
+                ]
+            },
+
+            description: {
+                type: String
+            }
+        },
+
+        // ==========================================
+        // APPLICATION INFORMATION
+        // ==========================================
+
+        applicationStartDate: {
+            type: Date
+        },
+
+        deadline: {
+            type: Date
+        },
+
+        applicationMode: {
+            type: String,
+            enum: [
+                "Online",
+                "Offline",
+                "Online & Offline"
+            ]
+        },
+
+        officialLink: {
+            type: String,
+            required: true
+        },
+
+        // ==========================================
+        // DOCUMENTS
+        // ==========================================
+
+        requiredDocuments: [
+            {
+                type: String
+            }
+        ],
+
+        // ==========================================
+        // STATUS
+        // ==========================================
+
+        status: {
+            type: String,
+            enum: [
+                "Active",
+                "Upcoming",
+                "Closed",
+                "Expired"
+            ],
+            default: "Active"
+        },
+
+        verified: {
+            type: Boolean,
+            default: false
+        },
+
+        featured: {
+            type: Boolean,
+            default: false
+        }
+    },
+
+    {
+        timestamps: true
+    }
+);
+
+module.exports = mongoose.model(
+    "Scholarship",
+    scholarshipSchema
+);

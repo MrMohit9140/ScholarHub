@@ -1,0 +1,82 @@
+<% layout("/layouts/boilerplate") %>
+
+<main class="page">
+
+    <section class="form-panel">
+
+        <div class="form-container">
+
+            <div class="form-heading">
+
+                <p class="form-label">
+                    ACCOUNT RECOVERY
+                </p>
+
+                <h2>
+                    Forgot your password?
+                </h2>
+
+                <p>
+                    Enter your registered email address
+                    to recover your account.
+                </p>
+
+            </div>
+
+
+            <form
+                method="POST"
+                action="/home/forgot-password"
+            >
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="you@example.com"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="submit-btn"
+                >
+
+                    <span>
+                        Continue
+                    </span>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                <p class="form-footer">
+
+                    Remember your password?
+
+                    <a href="/home/login">
+                        Back to Login
+                    </a>
+
+                </p>
+
+            </form>
+
+        </div>
+
+    </section>
+
+</main>

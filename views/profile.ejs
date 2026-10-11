@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>My Profile | ScholarHub</title>
+
+</head>
+
+<body>
+
+<h1>Student Profile</h1>
+<link rel="stylesheet" href="./css/profile.css">
+
+<form method="POST" action="/profile">
+
+    <h2>Personal Information</h2>
+
+    <label>Date of Birth</label>
+    <input
+        type="date"
+        name="dateOfBirth"
+    >
+
+    <br><br>
+
+    <label>Gender</label>
+
+    <select name="gender">
+
+        <option value="">Select</option>
+
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+        <option>Prefer not to say</option>
+
+    </select>
+
+    <br><br>
+
+    <label>State</label>
+
+    <input
+        type="text"
+        name="state"
+        placeholder="Gujarat"
+    >
+
+    <br><br>
+
+    <label>District</label>
+
+    <input
+        type="text"
+        name="district"
+    >
+
+    <br><br>
+
+    <label>
+        <input
+            type="checkbox"
+            name="disability"
+        >
+        Person with disability
+    </label>
+
+    <br>
+
+    <label>
+        <input
+            type="checkbox"
+            name="minority"
+        >
+        Minority
+    </label>
+
+
+    <h2>Education</h2>
+
+    <label>Education Level</label>
+
+    <select name="educationLevel">
+
+        <option value="">
+            Select
+        </option>
+
+        <option>School</option>
+        <option>Class 11-12</option>
+        <option>Diploma</option>
+        <option>Undergraduate</option>
+        <option>Postgraduate</option>
+        <option>PhD</option>
+
+    </select>
+
+    <br><br>
+
+
+    <label>Course</label>
+
+    <input
+        type="text"
+        name="course"
+        placeholder="B.Tech"
+    >
+
+    <br><br>
+
+
+    <label>Field</label>
+
+    <select name="field">
+
+        <option value="">Select</option>
+
+        <option>Engineering</option>
+        <option>Computer Science</option>
+        <option>Electronics</option>
+        <option>Medical</option>
+        <option>Science</option>
+        <option>Commerce</option>
+        <option>Management</option>
+        <option>Arts</option>
+        <option>Law</option>
+        <option>Other</option>
+
+    </select>
+
+    <br><br>
+
+
+    <label>Specialization / Branch</label>
+
+    <input
+        type="text"
+        name="specialization"
+        placeholder="ECE"
+    >
+
+    <br><br>
+
+
+    <label>Institution</label>
+
+    <input
+        type="text"
+        name="institution"
+    >
+
+    <br><br>
+
+
+    <label>Institution Type</label>
+
+    <select name="institutionType">
+
+        <option value="">Select</option>
+
+        <option>Government</option>
+        <option>Private</option>
+        <option>Government Aided</option>
+        <option>Other</option>
+
+    </select>
+
+    <br><br>
+
+
+    <label>Current Year</label>
+
+    <input
+        type="number"
+        name="year"
+        min="1"
+        max="10"
+    >
+
+    <br><br>
+
+
+    <label>Academic Year</label>
+
+    <input
+        type="text"
+        name="academicYear"
+        placeholder="2026-27"
+    >
+
+    <br><br>
+
+
+    <label>Percentage</label>
+
+    <input
+        type="number"
+        name="percentage"
+        step="0.01"
+        min="0"
+        max="100"
+    >
+
+    <br><br>
+
+
+    <label>CGPA</label>
+
+    <input
+        type="number"
+        name="cgpa"
+        step="0.01"
+        min="0"
+        max="10"
+    >
+
+
+    <h2>Financial Information</h2>
+
+    <label>Income Range</label>
+
+    <select name="incomeRange">
+
+        <option value="">Select</option>
+
+        <option>Below 1 Lakh</option>
+        <option>1-2.5 Lakh</option>
+        <option>2.5-5 Lakh</option>
+        <option>5-8 Lakh</option>
+        <option>Above 8 Lakh</option>
+
+    </select>
+
+    <br><br>
+
+
+    <label>Annual Family Income</label>
+
+    <input
+        type="number"
+        name="incomeAmount"
+        placeholder="300000"
+    >
+
+    <br><br>
+
+
+    <label>
+        <input
+            type="checkbox"
+            name="incomeCertificateAvailable"
+        >
+
+        Income certificate available
+    </label>
+
+
+    <h2>Eligibility</h2>
+
+    <label>Category</label>
+
+    <select name="category">
+
+        <option value="">Select</option>
+
+        <option>General</option>
+        <option>EWS</option>
+        <option>OBC</option>
+        <option>SC</option>
+        <option>ST</option>
+        <option>Other</option>
+        <option>Prefer not to say</option>
+
+    </select>
+
+    <br><br>
+
+
+    <label>
+        <input
+            type="checkbox"
+            name="firstGenerationStudent"
+        >
+        First generation student
+    </label>
+
+    <br>
+
+    <label>
+        <input
+            type="checkbox"
+            name="singleParent"
+        >
+        Single parent
+    </label>
+
+    <br>
+
+    <label>
+        <input
+            type="checkbox"
+            name="orphan"
+        >
+        Orphan
+    </label>
+
+    <br>
+
+    <label>
+        <input
+            type="checkbox"
+            name="defenceWard"
+        >
+        Defence ward
+    </label>
+
+    <br>
+
+    <label>
+        <input
+            type="checkbox"
+            name="girlStudent"
+        >
+        Girl student
+    </label>
+
+    <br>
+
+    <label>
+        <input
+            type="checkbox"
+            name="ruralStudent"
+        >
+        Rural student
+    </label>
+
+
+    <h2>Interests</h2>
+
+    <label>
+        <input
+            type="checkbox"
+            name="interests"
+            value="AI"
+        >
+        AI
+    </label>
+
+    <label>
+        <input
+            type="checkbox"
+            name="interests"
+            value="Web Development"
+        >
+        Web Development
+    </label>
+
+    <label>
+        <input
+            type="checkbox"
+            name="interests"
+            value="Programming"
+        >
+        Programming
+    </label>
+
+    <label>
+        <input
+            type="checkbox"
+            name="interests"
+            value="Electronics"
+        >
+        Electronics
+    </label>
+
+    <br><br>
+
+    <button type="submit">
+        Save Profile
+    </button>
+
+</form>
+
+</body>
+</html>

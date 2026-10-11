@@ -1,0 +1,680 @@
+
+<% layout("/layouts/boilerplate") %>
+
+<!-- ================= REGISTRATION PAGE ================= -->
+
+<main class="page">
+
+    <!-- ================= LEFT PANEL ================= -->
+
+    <section class="intro-panel">
+
+        <div class="intro-content">
+
+            <!-- BRAND -->
+            <div class="brand-badge">
+                ✦ ScholarHub
+            </div>
+
+            <!-- HEADING -->
+            <h1>
+                Start your
+                <span>journey.</span>
+            </h1>
+
+            <p class="intro-text">
+                Create your ScholarHub account and unlock a
+                smarter way to discover opportunities, connect
+                with students, and build your future.
+            </p>
+
+            <!-- BENEFITS -->
+
+            <div class="benefits">
+
+                <div class="benefit">
+
+                    <div class="benefit-icon">
+                        🎓
+                    </div>
+
+                    <div>
+                        <h3>
+                            Discover Opportunities
+                        </h3>
+
+                        <p>
+                            Find scholarships, internships,
+                            programs and competitions.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="benefit">
+
+                    <div class="benefit-icon">
+                        🚀
+                    </div>
+
+                    <div>
+                        <h3>
+                            Build Your Future
+                        </h3>
+
+                        <p>
+                            Get access to opportunities that
+                            match your academic journey.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="benefit">
+
+                    <div class="benefit-icon">
+                        🤝
+                    </div>
+
+                    <div>
+                        <h3>
+                            Join the Community
+                        </h3>
+
+                        <p>
+                            Connect, learn and grow with
+                            students from different backgrounds.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUOTE -->
+
+            <div class="quote-card">
+
+                <span class="quote-mark">
+                    “
+                </span>
+
+                <p>
+                    Your next opportunity could begin
+                    with a simple decision today.
+                </p>
+
+                <small>
+                    — ScholarHub
+                </small>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FORM PANEL ================= -->
+
+    <section class="form-panel">
+
+        <div class="form-container">
+
+
+            <!-- FORM HEADING -->
+
+            <div class="form-heading">
+
+                <p class="form-label">
+                    CREATE YOUR ACCOUNT
+                </p>
+
+                <h2>
+                    Join ScholarHub
+                </h2>
+
+                <p>
+                    Create your account to get started.
+                </p>
+
+            </div>
+
+
+            <!-- ================= REGISTRATION FORM ================= -->
+
+            <form
+                method="POST"
+                action="/home/register"
+                id="registerForm"
+            >
+
+
+                <!-- NAME -->
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Full Name
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your full name"
+                        autocomplete="name"
+                        maxlength="100"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- USERNAME -->
+
+                <div class="form-group">
+
+                    <label for="username">
+                        Username
+                        <span>*</span>
+                    </label>
+
+                    <div class="input-with-prefix">
+
+                        <span class="input-prefix">
+                            @
+                        </span>
+
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            placeholder="choose a username"
+                            autocomplete="username"
+                            maxlength="50"
+                            required
+                        >
+
+                    </div>
+
+                    <small class="input-help">
+                        Use letters, numbers, underscores or dots.
+                    </small>
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="you@example.com"
+                        autocomplete="email"
+                        maxlength="150"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+                    <div class="label-row">
+
+                        <label for="password">
+                            Create Password
+                            <span>*</span>
+                        </label>
+
+                    </div>
+
+
+                    <div class="password-wrapper">
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Create a strong password"
+                            autocomplete="new-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="togglePassword"
+                            aria-label="Show password"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+
+
+                    <!-- PASSWORD STRENGTH -->
+
+                    <div class="password-strength">
+
+                        <div class="strength-bars">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+                        <span
+                            id="strengthText"
+                            class="strength-text"
+                        >
+                            Enter a password
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONFIRM PASSWORD -->
+
+                <div class="form-group">
+
+                    <label for="confirmPassword">
+                        Confirm Password
+                        <span>*</span>
+                    </label>
+
+                    <div class="password-wrapper">
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            placeholder="Re-enter your password"
+                            autocomplete="new-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="toggleConfirmPassword"
+                            aria-label="Show confirm password"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+
+                    <small
+                        id="passwordMessage"
+                        class="password-message"
+                    ></small>
+
+                </div>
+
+
+                <!-- TERMS -->
+
+                <label class="terms-check">
+
+                    <input
+                        type="checkbox"
+                        name="terms"
+                        id="terms"
+                        required
+                    >
+
+                    <span>
+                        I agree to the
+                        <a href="#" onclick="return false;">
+                            Terms & Conditions
+                        </a>
+                        and
+                        <a href="#" onclick="return false;">
+                            Privacy Policy
+                        </a>.
+                    </span>
+
+                </label>
+
+
+                <!-- REGISTER BUTTON -->
+
+                <button
+                    type="submit"
+                    class="submit-btn"
+                    id="registerButton"
+                >
+
+                    <span>
+                        Create My Account
+                    </span>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                <!-- LOGIN LINK -->
+
+                <p class="form-footer">
+
+                    Already have an account?
+
+                    <a href="/home/login">
+                        Login here
+                    </a>
+
+                </p>
+
+            </form>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ================= REGISTRATION JAVASCRIPT ================= -->
+
+<script>
+
+    /* ================= PASSWORD VISIBILITY ================= */
+
+    const password = document.getElementById("password");
+
+    const confirmPassword =
+        document.getElementById("confirmPassword");
+
+
+    const togglePassword =
+        document.getElementById("togglePassword");
+
+    const toggleConfirmPassword =
+        document.getElementById("toggleConfirmPassword");
+
+
+    togglePassword.addEventListener("click", function () {
+
+        if (password.type === "password") {
+
+            password.type = "text";
+
+            this.textContent = "Hide";
+
+            this.setAttribute(
+                "aria-label",
+                "Hide password"
+            );
+
+        } else {
+
+            password.type = "password";
+
+            this.textContent = "Show";
+
+            this.setAttribute(
+                "aria-label",
+                "Show password"
+            );
+
+        }
+
+    });
+
+
+    toggleConfirmPassword.addEventListener("click", function () {
+
+        if (confirmPassword.type === "password") {
+
+            confirmPassword.type = "text";
+
+            this.textContent = "Hide";
+
+            this.setAttribute(
+                "aria-label",
+                "Hide password"
+            );
+
+        } else {
+
+            confirmPassword.type = "password";
+
+            this.textContent = "Show";
+
+            this.setAttribute(
+                "aria-label",
+                "Show password"
+            );
+
+        }
+
+    });
+
+
+    /* ================= USERNAME ================= */
+
+    const username =
+        document.getElementById("username");
+
+
+    username.addEventListener("input", function () {
+
+        this.value = this.value
+            .toLowerCase()
+            .replace(/\s+/g, "")
+            .replace(/[^a-z0-9_.]/g, "");
+
+    });
+
+
+    /* ================= PASSWORD STRENGTH ================= */
+
+    const strengthBars =
+        document.querySelectorAll(".strength-bars span");
+
+    const strengthText =
+        document.getElementById("strengthText");
+
+
+    password.addEventListener("input", function () {
+
+        const value = this.value;
+
+        let strength = 0;
+
+
+        if (value.length >= 8) {
+            strength++;
+        }
+
+        if (/[A-Z]/.test(value)) {
+            strength++;
+        }
+
+        if (/[0-9]/.test(value)) {
+            strength++;
+        }
+
+        if (/[^A-Za-z0-9]/.test(value)) {
+            strength++;
+        }
+
+
+        strengthBars.forEach((bar, index) => {
+
+            bar.classList.toggle(
+                "active",
+                index < strength
+            );
+
+        });
+
+
+        if (value.length === 0) {
+
+            strengthText.textContent =
+                "Enter a password";
+
+            strengthText.className =
+                "strength-text";
+
+        }
+
+        else if (strength <= 1) {
+
+            strengthText.textContent =
+                "Weak password";
+
+            strengthText.className =
+                "strength-text weak";
+
+        }
+
+        else if (strength === 2) {
+
+            strengthText.textContent =
+                "Medium password";
+
+            strengthText.className =
+                "strength-text medium";
+
+        }
+
+        else {
+
+            strengthText.textContent =
+                "Strong password";
+
+            strengthText.className =
+                "strength-text strong";
+
+        }
+
+    });
+
+
+    /* ================= CONFIRM PASSWORD ================= */
+
+    const passwordMessage =
+        document.getElementById("passwordMessage");
+
+
+    function checkPasswords() {
+
+        if (confirmPassword.value === "") {
+
+            passwordMessage.textContent = "";
+
+            confirmPassword.classList.remove(
+                "input-error",
+                "input-success"
+            );
+
+            return;
+
+        }
+
+
+        if (password.value === confirmPassword.value) {
+
+            passwordMessage.textContent =
+                "✓ Passwords match";
+
+            passwordMessage.className =
+                "password-message success";
+
+            confirmPassword.classList.remove(
+                "input-error"
+            );
+
+            confirmPassword.classList.add(
+                "input-success"
+            );
+
+        } else {
+
+            passwordMessage.textContent =
+                "Passwords do not match";
+
+            passwordMessage.className =
+                "password-message error";
+
+            confirmPassword.classList.remove(
+                "input-success"
+            );
+
+            confirmPassword.classList.add(
+                "input-error"
+            );
+
+        }
+
+    }
+
+
+    confirmPassword.addEventListener(
+        "input",
+        checkPasswords
+    );
+
+    password.addEventListener(
+        "input",
+        checkPasswords
+    );
+
+
+    /* ================= FORM SUBMISSION ================= */
+
+    const registerForm =
+        document.getElementById("registerForm");
+
+    const registerButton =
+        document.getElementById("registerButton");
+
+
+    registerForm.addEventListener(
+        "submit",
+        function (event) {
+
+            if (
+                password.value !==
+                confirmPassword.value
+            ) {
+
+                event.preventDefault();
+
+                passwordMessage.textContent =
+                    "Passwords do not match";
+
+                passwordMessage.className =
+                    "password-message error";
+
+                confirmPassword.focus();
+
+                return;
+
+            }
+        

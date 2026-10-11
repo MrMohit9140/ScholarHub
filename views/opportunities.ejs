@@ -1,0 +1,78 @@
+  <!-- navBar Section -->
+     <% layout("/layouts/boilerplate") %>
+
+<body>
+
+<h1>Recommended Opportunities</h1>
+
+<% if (results.length === 0) { %>
+
+    <p>
+        No opportunities found.
+    </p>
+
+<% } %>
+
+
+<% results.forEach(item => { %>
+
+    <div>
+
+        <h2>
+            <%= item.opportunity.title %>
+        </h2>
+
+        <p>
+            <%= item.opportunity.provider %>
+        </p>
+
+        <h3>
+            ⭐ <%= item.score %>% Match
+        </h3>
+
+
+        <h4>
+            Why this matches you:
+        </h4>
+
+        <ul>
+
+            <% item.reasons.forEach(reason => { %>
+
+                <li>
+                    <%= reason %>
+                </li>
+
+            <% }) %>
+
+        </ul>
+
+
+        <p>
+            Deadline:
+
+            <%= item.opportunity.deadline
+                ? new Date(
+                    item.opportunity.deadline
+                  ).toLocaleDateString()
+                : "Not specified"
+            %>
+        </p>
+
+
+        <a
+            href="<%= item.opportunity.officialLink %>"
+            target="_blank"
+        >
+            Apply / Official Website
+        </a>
+
+        <hr>
+
+    </div>
+
+<% }) %>
+
+</body>
+
+</html>

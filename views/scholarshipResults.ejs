@@ -1,0 +1,127 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="results-page">
+
+    <div class="results-header">
+
+        <p class="eyebrow">
+            SCHOLARSHIP FINDER
+        </p>
+
+        <h1>
+            Scholarships For You
+        </h1>
+
+        <p>
+            Based on the information in your student profile,
+            we found these opportunities.
+        </p>
+
+        <a href="/scholarships">
+            Edit My Profile
+        </a>
+
+    </div>
+
+
+    <% if (scholarships.length === 0) { %>
+
+        <div class="no-results">
+
+            <h2>No matching scholarships found</h2>
+
+            <p>
+                We couldn't find a scholarship matching your
+                current profile.
+            </p>
+
+            <a href="/scholarships">
+                Update Profile
+            </a>
+
+        </div>
+
+    <% } else { %>
+
+
+        <div class="scholarship-grid">
+
+            <% scholarships.forEach(scholarship => { %>
+
+                <div class="scholarship-card">
+
+                    <div class="card-top">
+
+                        <span class="provider">
+                            <%= scholarship.provider %>
+                        </span>
+
+                        <span class="match">
+                            ✓ Eligible
+                        </span>
+
+                    </div>
+
+
+                    <h2>
+                        <%= scholarship.name %>
+                    </h2>
+
+
+                    <p class="description">
+                        <%= scholarship.description %>
+                    </p>
+
+
+                    <div class="eligibility">
+
+                        <div>
+                            <span>Income Limit</span>
+                            <strong>
+                                ₹<%= scholarship.maxIncome.toLocaleString("en-IN") %>
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span>Minimum Percentage</span>
+                            <strong>
+                                <%= scholarship.minPercentage %>%
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="deadline">
+
+                        <span>Application Deadline</span>
+
+                        <strong>
+                            <%= scholarship.deadline
+                                ? new Date(scholarship.deadline)
+                                    .toLocaleDateString("en-IN")
+                                : "Check official website"
+                            %>
+                        </strong>
+
+                    </div>
+
+
+                    <a
+                        href="<%= scholarship.officialLink %>"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="apply-btn"
+                    >
+                        View Official Scholarship →
+                    </a>
+
+                </div>
+
+            <% }) %>
+
+        </div>
+
+    <% } %>
+
+</div>

@@ -1,0 +1,291 @@
+<% layout("/layouts/boilerplate") %>
+
+<main class="community-page">
+
+    <!-- PAGE HEADER -->
+    <section class="community-header">
+
+        <div class="header-content">
+
+            <span class="eyebrow">
+                SCHOLARHUB COMMUNITY
+            </span>
+
+            <h1>
+                Discover Your
+                <span>Community.</span>
+            </h1>
+
+            <p>
+                Meet students, explore their interests, and connect
+                with people on similar learning journeys.
+            </p>
+
+        </div>
+
+        <!-- SEARCH -->
+        <div class="community-search">
+
+            <span>⌕</span>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search students, skills or interests..."
+            >
+
+        </div>
+
+    </section>
+
+
+    <!-- COMMUNITY STATS -->
+
+    <section class="community-stats">
+
+        <div class="stat-card">
+            <div class="stat-icon">👥</div>
+            <div>
+                <strong><%= users.length %>+</strong>
+                <span>Students</span>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">🎓</div>
+            <div>
+                <strong>10+</strong>
+                <span>Study Fields</span>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">🚀</div>
+            <div>
+                <strong>50+</strong>
+                <span>Opportunities</span>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">🤝</div>
+            <div>
+                <strong>Growing</strong>
+                <span>Community</span>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- SECTION TITLE -->
+
+    <div class="section-title">
+
+        <div>
+            <span class="eyebrow">
+                STUDENTS
+            </span>
+
+            <h2>
+                People you may want to know
+            </h2>
+        </div>
+
+        <span class="student-count">
+            <%= users.length %> students
+        </span>
+
+    </div>
+
+
+    <!-- COMMUNITY CARDS -->
+
+    <section class="community-grid" id="communityGrid">
+
+        <% for (let user of users) { %>
+
+            <article
+                class="student-card"
+                data-search="
+                    <%= user.name %>
+                    <%= user.username %>
+                    <%= user.field %>
+                    <%= user.bio %>
+                    <%= user.interests ? user.interests.join(' ') : '' %>
+                "
+            >
+
+                <!-- CARD TOP -->
+
+                <div class="card-top">
+
+                    <div class="avatar">
+
+                        <%= user.name
+                            .charAt(0)
+                            .toUpperCase() %>
+
+                    </div>
+
+                    <span class="active-badge">
+                        <span></span>
+                        Active
+                    </span>
+
+                </div>
+
+
+                <!-- CARD CONTENT -->
+
+                <div class="card-body">
+
+                    <div class="student-name">
+
+                        <div>
+
+                            <h3>
+                                <%= user.name %>
+                            </h3>
+
+                            <p>
+                                @<%= user.username %>
+                            </p>
+
+                        </div>
+
+                        <span class="verified">
+                            ✓
+                        </span>
+
+                    </div>
+
+
+                    <!-- FIELD -->
+
+                    <div class="study-field">
+
+                        <span>🎓</span>
+
+                        <div>
+                            <small>STUDYING</small>
+
+                            <strong>
+                                <%= user.field %>
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <!-- BIO -->
+
+                    <p class="student-bio">
+                        <%= user.bio %>
+                    </p>
+
+
+                    <!-- INTERESTS -->
+
+                    <% if (user.interests && user.interests.length) { %>
+
+                        <div class="interest-list">
+
+                            <% user.interests.slice(0, 4).forEach((interest) => { %>
+
+                                <span>
+                                    <%= interest %>
+                                </span>
+
+                            <% }); %>
+
+                            <% if (user.interests.length > 4) { %>
+
+                                <span>
+                                    +<%= user.interests.length - 4 %>
+                                </span>
+
+                            <% } %>
+
+                        </div>
+
+                    <% } %>
+
+
+                    <!-- ACTIVITY -->
+
+                    <div class="activity-row">
+
+                        <div>
+                            <strong>
+                                <%= user.posts || 0 %>
+                            </strong>
+                            <span>Posts</span>
+                        </div>
+
+                        <div>
+                            <strong>
+                                <%= user.followers || 0 %>
+                            </strong>
+                            <span>Followers</span>
+                        </div>
+
+                        <div>
+                            <strong>
+                                <%= user.following || 0 %>
+                            </strong>
+                            <span>Following</span>
+                        </div>
+
+                    </div>
+
+
+                    <!-- ACTION -->
+
+                    <a
+                        href="/post/<%= user.id %>"
+                        class="profile-btn"
+                    >
+
+                        View Profile
+
+                        <span>
+                            →
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+        <% } %>
+
+    </section>
+
+
+    <!-- EMPTY SEARCH RESULT -->
+
+    <div
+        id="noResults"
+        class="no-results"
+        style="display: none;"
+    >
+
+        <div>
+            🔎
+        </div>
+
+        <h3>
+            No students found
+        </h3>
+
+        <p>
+            Try searching for another name, field or interest.
+        </p>
+
+    </div>
+
+</main>
+<script src="/js/community.js"></script>
+

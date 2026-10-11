@@ -1,0 +1,563 @@
+<% layout("/layouts/boilerplate") %>
+
+<main class="dashboard-page">
+
+    <section class="dashboard-container">
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="dashboard-sidebar">
+
+            <div class="sidebar-profile">
+
+                <div class="sidebar-avatar">
+                    <%= user.name.charAt(0).toUpperCase() %>
+                </div>
+
+                <h3>
+                    <%= user.name %>
+                </h3>
+
+                <p>
+                    @<%= user.username %>
+                </p>
+
+            </div>
+
+
+            <nav class="dashboard-nav">
+
+                <a href="/dashboard" class="active">
+                    <span>⌂</span>
+                    Dashboard
+                </a>
+
+                <a href="/profile">
+                    <span>👤</span>
+                    My Profile
+                </a>
+
+                <a href="/scholarships">
+                    <span>🎓</span>
+                    Scholarships
+                </a>
+
+                <a href="/internships">
+                    <span>💼</span>
+                    Internships
+                </a>
+
+                <a href="/saved">
+                    <span>🔖</span>
+                    Saved Opportunities
+                </a>
+
+                <a href="/applications">
+                    <span>📋</span>
+                    My Applications
+                </a>
+
+                <a href="/settings">
+                    <span>⚙️</span>
+                    Settings
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <a href="/logout" class="sidebar-logout">
+                    <span>↪</span>
+                    Logout
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ================= MAIN CONTENT ================= -->
+
+        <section class="dashboard-main">
+
+
+            <!-- HEADER -->
+
+            <div class="dashboard-top">
+
+                <div>
+
+                    <p class="dashboard-label">
+                        SCHOLARHUB DASHBOARD
+                    </p>
+
+                    <h1>
+                        Welcome back, <%= user.name.split(" ")[0] %> 👋
+                    </h1>
+
+                    <p class="dashboard-subtitle">
+                        Manage your profile and discover opportunities
+                        made for your journey.
+                    </p>
+
+                </div>
+
+
+                <a href="/profile/edit" class="edit-profile-btn">
+                    ✎ Edit Profile
+                </a>
+
+            </div>
+
+
+            <!-- ================= PROFILE COMPLETION ================= -->
+
+            <div class="profile-completion-card">
+
+                <div class="completion-content">
+
+                    <div>
+
+                        <p class="completion-label">
+                            PROFILE COMPLETION
+                        </p>
+
+                        <h2>
+                            Complete your student profile
+                        </h2>
+
+                        <p>
+                            Add your academic and personal information
+                            to receive better opportunity recommendations.
+                        </p>
+
+                    </div>
+
+
+                    <div class="completion-percentage">
+                        40%
+                    </div>
+
+                </div>
+
+
+                <div class="progress-bar">
+
+                    <div
+                        class="progress-value"
+                        style="width: 40%;">
+                    </div>
+
+                </div>
+
+
+                <div class="completion-footer">
+
+                    <span>
+                        Add your academic details to improve your matches.
+                    </span>
+
+                    <a href="/profile/edit">
+                        Complete Profile →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= QUICK STATS ================= -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon scholarship-icon">
+                        🎓
+                    </div>
+
+                    <div>
+                        <p>
+                            Recommended
+                        </p>
+
+                        <h2>
+                            12
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon internship-icon">
+                        💼
+                    </div>
+
+                    <div>
+                        <p>
+                            Internships
+                        </p>
+
+                        <h2>
+                            8
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon saved-icon">
+                        🔖
+                    </div>
+
+                    <div>
+                        <p>
+                            Saved
+                        </p>
+
+                        <h2>
+                            5
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon application-icon">
+                        📋
+                    </div>
+
+                    <div>
+                        <p>
+                            Applications
+                        </p>
+
+                        <h2>
+                            3
+                        </h2>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= PROFILE + OPPORTUNITIES ================= -->
+
+            <div class="dashboard-columns">
+
+
+                <!-- PERSONAL INFORMATION -->
+
+                <div class="dashboard-section">
+
+                    <div class="section-heading">
+
+                        <div>
+
+                            <p class="section-label">
+                                YOUR PROFILE
+                            </p>
+
+                            <h2>
+                                Personal Information
+                            </h2>
+
+                        </div>
+
+                        <a href="/profile/edit">
+                            Edit
+                        </a>
+
+                    </div>
+
+
+                    <div class="information-list">
+
+                        <div class="information-item">
+
+                            <span class="information-icon">
+                                👤
+                            </span>
+
+                            <div>
+                                <small>
+                                    Full Name
+                                </small>
+
+                                <p>
+                                    <%= user.name %>
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="information-item">
+
+                            <span class="information-icon">
+                                ✉️
+                            </span>
+
+                            <div>
+                                <small>
+                                    Email
+                                </small>
+
+                                <p>
+                                    <%= user.email %>
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="information-item">
+
+                            <span class="information-icon">
+                                @
+                            </span>
+
+                            <div>
+                                <small>
+                                    Username
+                                </small>
+
+                                <p>
+                                    @<%= user.username %>
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ACADEMIC PROFILE -->
+
+                <div class="dashboard-section">
+
+                    <div class="section-heading">
+
+                        <div>
+
+                            <p class="section-label">
+                                EDUCATION
+                            </p>
+
+                            <h2>
+                                Academic Profile
+                            </h2>
+
+                        </div>
+
+                        <a href="/profile/edit">
+                            Add
+                        </a>
+
+                    </div>
+
+
+                    <div class="empty-academic">
+
+                        <div class="empty-icon">
+                            🎓
+                        </div>
+
+                        <h3>
+                            Complete your academic profile
+                        </h3>
+
+                        <p>
+                            Add your college, course, branch and
+                            academic information.
+                        </p>
+
+                        <a href="/profile/edit">
+                            Add Academic Details →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= RECOMMENDED OPPORTUNITIES ================= -->
+
+            <div class="dashboard-section opportunities-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <p class="section-label">
+                            DISCOVER
+                        </p>
+
+                        <h2>
+                            Recommended Opportunities
+                        </h2>
+
+                    </div>
+
+                    <a href="/scholarships">
+                        View All →
+                    </a>
+
+                </div>
+
+
+                <div class="opportunity-grid">
+
+
+                    <article class="opportunity-card">
+
+                        <div class="opportunity-top">
+
+                            <span class="opportunity-type scholarship">
+                                SCHOLARSHIP
+                            </span>
+
+                            <button class="save-btn">
+                                ♡
+                            </button>
+
+                        </div>
+
+                        <h3>
+                            National Scholarship Program
+                        </h3>
+
+                        <p>
+                            Financial support for eligible
+                            undergraduate students.
+                        </p>
+
+                        <div class="opportunity-meta">
+
+                            <span>
+                                🎓 Undergraduate
+                            </span>
+
+                            <span>
+                                🇮🇳 India
+                            </span>
+
+                        </div>
+
+                        <a href="#">
+                            View Opportunity →
+                        </a>
+
+                    </article>
+
+
+                    <article class="opportunity-card">
+
+                        <div class="opportunity-top">
+
+                            <span class="opportunity-type internship">
+                                INTERNSHIP
+                            </span>
+
+                            <button class="save-btn">
+                                ♡
+                            </button>
+
+                        </div>
+
+                        <h3>
+                            Software Development Internship
+                        </h3>
+
+                        <p>
+                            Gain practical experience by working
+                            on real-world projects.
+                        </p>
+
+                        <div class="opportunity-meta">
+
+                            <span>
+                                💻 Technology
+                            </span>
+
+                            <span>
+                                🌐 Remote
+                            </span>
+
+                        </div>
+
+                        <a href="#">
+                            View Opportunity →
+                        </a>
+
+                    </article>
+
+
+                    <article class="opportunity-card">
+
+                        <div class="opportunity-top">
+
+                            <span class="opportunity-type competition">
+                                COMPETITION
+                            </span>
+
+                            <button class="save-btn">
+                                ♡
+                            </button>
+
+                        </div>
+
+                        <h3>
+                            Student Innovation Challenge
+                        </h3>
+
+                        <p>
+                            Showcase your ideas and compete with
+                            students across the country.
+                        </p>
+
+                        <div class="opportunity-meta">
+
+                            <span>
+                                🚀 Innovation
+                            </span>
+
+                            <span>
+                                🏆 Competition
+                            </span>
+
+                        </div>
+
+                        <a href="#">
+                            View Opportunity →
+                        </a>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </section>
+
+</main>
