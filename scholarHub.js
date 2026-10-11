@@ -572,23 +572,6 @@ app.get(
 );
 
 
-// =====================================================
-// START SERVER
-// =====================================================
-
-const PORT =
-    process.env.PORT || 8080;
-
-
-app.listen(PORT, () => {
-
-    console.log(
-        `ScholarHub running at http://localhost:${PORT}`
-    );
-
-});
-
-
 
 // For the student routes
 const studentRoutes = require("./routes/student");  // requiring student routes
